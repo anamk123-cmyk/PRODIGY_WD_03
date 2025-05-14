@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+  --bg: linear-gradient(120deg, #1f1c2c, #928dab);
+  --text: #ffffff;
+  --cell-bg: rgba(255, 255, 255, 0.1);
+  --x-color: #00f0ff;
+  --o-color: #ff3e92;
+  --highlight: yellow;
+}
+
+body.light {
+  --bg: linear-gradient(120deg, #f0f2f5, #d6d6d6);
+  --text: #000;
+  --cell-bg: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: 0.3s;
+}
+
+.container {
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+select, button {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: var(--cell-bg);
+  border-radius: 10px;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cell.X { color: var(--x-color); }
+.cell.O { color: var(--o-color); }
+.cell.win { background-color: var(--highlight); }
+
+.status {
+  font-size: 1.2rem;
+  margin: 15px 0;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-weight: bold;
+}
